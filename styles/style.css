@@ -67,9 +67,9 @@ header {
 }
 
 .pitem1{     /*relative 실습*/
-    /* position: relative;
+    position: relative;
     left : 300px;
-    top : 20px; */
+    top : 20px;
 }
 
 .pitem2{       /*fixed 실습. body 기준으로 위치*/
@@ -89,7 +89,7 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 
 }
 
@@ -148,3 +148,39 @@ header {
 /*
     animation 실습 (같이 진행하겠습니다.)
 */
+
+
+.animation-parent{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap : 10px;
+    height: 30vh;
+}
+
+.bar{
+    height: 140px;
+    width: 20px;
+    background-color: var(--main-color);
+    border-radius: 3px;
+
+    /*animation 선언*/
+    animation: wave 1s infinite ease-in-out;
+}
+
+.bar:nth-child(1) { animation-delay : 0s; }
+.bar:nth-child(2) { animation-delay : 0.1s; }
+.bar:nth-child(3) { animation-delay : 0.2s; }
+.bar:nth-child(4) { animation-delay : 0.3s; }
+.bar:nth-child(5) { animation-delay : 0.4s; }
+
+
+@keyframes wave {
+    0%, 100%{
+        transform: scaleY(0.7);
+    }
+
+    50%{
+        transform: scaleY(1.3);
+    }
+}
